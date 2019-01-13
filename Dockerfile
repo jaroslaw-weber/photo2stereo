@@ -15,8 +15,10 @@ RUN mkdir depths
 RUN mkdir checkpoints
 RUN mkdir checkpoints/test_local
 # model download
-ADD https://www.cs.cornell.edu/projects/megadepth/dataset/models/best_generalization_net_G.pth best_generalization_net_G.pth
+RUN wget https://www.cs.cornell.edu/projects/megadepth/dataset/models/best_generalization_net_G.pth
 RUN cp best_generalization_net_G.pth /workspace/checkpoints/test_local/best_vanila_net_G.pth
-# aliases
-RUN echo 'alias makeit3d="python makeit3d/src/run.py"' >> ~/.bashrc
-RUN echo 'alias cpu="python makeit3d/src/use_cpu.py"' >> ~/.bashrc
+# 
+VOLUME /input
+VOLUME /output
+ENTRYPOINT python
+CMD run.py
