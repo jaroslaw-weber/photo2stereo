@@ -8,7 +8,7 @@ RUN pip install scipy
 RUN pip install scikit-image
 
 #clone repos
-RUN git clone https://github.com/jaroslaw-weber/makeit3d
+RUN git clone https://github.com/jaroslaw-weber/photo2stereo
 RUN git clone https://github.com/lixx2938/MegaDepth.git
 # directories
 RUN mkdir depths
@@ -20,5 +20,9 @@ RUN cp best_generalization_net_G.pth /workspace/checkpoints/test_local/best_vani
 # 
 VOLUME /input
 VOLUME /output
-ENTRYPOINT python
-CMD run.py
+COPY start.sh /
+COPY start.sh /usr/local/bin
+RUN pip install depthgen
+RUN pip install depth2stereo
+RUN pip install https://github.com/jaroslaw-weber/photo2stereo
+ENTRYPOINT ["start.sh"]
