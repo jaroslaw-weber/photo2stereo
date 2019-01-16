@@ -8,8 +8,8 @@ RUN pip install scipy
 RUN pip install scikit-image
 
 #clone repos
-RUN git clone https://github.com/jaroslaw-weber/photo2stereo
-RUN git clone https://github.com/lixx2938/MegaDepth.git
+#RUN git clone https://github.com/jaroslaw-weber/photo2stereo
+#RUN git clone https://github.com/lixx2938/MegaDepth.git
 # directories
 RUN mkdir depths
 RUN mkdir checkpoints
