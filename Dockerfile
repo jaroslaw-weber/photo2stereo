@@ -20,9 +20,12 @@ RUN cp best_generalization_net_G.pth /workspace/checkpoints/test_local/best_vani
 # 
 VOLUME /input
 VOLUME /output
+ADD start.sh
 COPY start.sh /
 COPY start.sh /usr/local/bin
-RUN pip install depthgen
+#RUN pip install depthgen
+RUN pip install git+https://github.com/jaroslaw-weber/depthgen
 RUN pip install depth2stereo
-RUN pip install https://github.com/jaroslaw-weber/photo2stereo
-ENTRYPOINT ["start.sh"]
+RUN pip install git+https://github.com/jaroslaw-weber/photo2stereo
+ADD run.py
+#ENTRYPOINT ["start.sh"]
