@@ -1,0 +1,1 @@
+sudo docker run -it -v ${PWD}/input:/workspace/input -v ${PWD}/output:/workspace/output photo2stereo
