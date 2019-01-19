@@ -7,10 +7,6 @@ RUN apt-get update \
 RUN pip install scipy
 RUN pip install scikit-image
 
-#clone repos
-#RUN git clone https://github.com/jaroslaw-weber/photo2stereo
-#RUN git clone https://github.com/lixx2938/MegaDepth.git
-# directories
 RUN mkdir depths
 RUN mkdir checkpoints
 RUN mkdir checkpoints/test_local
@@ -18,13 +14,9 @@ RUN mkdir checkpoints/test_local
 RUN wget https://www.cs.cornell.edu/projects/megadepth/dataset/models/best_generalization_net_G.pth
 RUN cp best_generalization_net_G.pth /workspace/checkpoints/test_local/best_vanila_net_G.pth
 # 
-RUN mkdir input
-VOLUME /input
-VOLUME /output
 ADD start.sh start.sh
 COPY start.sh /
 COPY start.sh /usr/local/bin
-#RUN pip install depthgen
 RUN pip install git+https://github.com/jaroslaw-weber/depthgen
 RUN pip install depth2stereo
 RUN pip install git+https://github.com/jaroslaw-weber/photo2stereo

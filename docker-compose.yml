@@ -1,0 +1,8 @@
+version: "3.3"
+services: 
+ photo2stereo:
+  build: .
+  image: photo2stereo 
+  volumes:
+    - ./input:/input
+    - ./output:/output
