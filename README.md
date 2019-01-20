@@ -7,7 +7,7 @@ batch generate 3d stereo images from single photo
 install docker, then run:
 
 ```
-docker pull jaroslawweber/photo2stereo
+docker pull jaroslawweber/photo2stereo:base
 ```
 
 # use
@@ -17,6 +17,6 @@ create folder input and put there jpg files (jpeg not working)
 then run
 
 ```
-docker run -it -v ${PWD}/input:/workspace/input -v ${PWD}/output:/workspace/output photo2stereo
+docker run -it -v ${PWD}/input:/workspace/input -v ${PWD}/output:/workspace/output jaroslawweber/photo2stereo:base
 python generate_stereo.py
 ```
