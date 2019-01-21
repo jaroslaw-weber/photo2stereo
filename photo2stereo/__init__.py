@@ -57,7 +57,7 @@ def batch_create(input_path="input",
                     "generating stereo image (" + str(c) + ")..." + fn_log)
                 distortion_rate = i
                 o_path_with_number = o_path.replace(
-                    ".png", "_" + str(i).replace(".", "_") + ".png")
+                    ".png", "_" + str(i).replace(".", "_") + "_LRF.png")
                 input_image = Image.open(i_path)
                 depthmap = Image.open(d_path)
                 stereoimage = stereo.generate_stereo_pair(
