@@ -4,17 +4,18 @@ batch generate 3d stereo images from single photo
 
 # examples
 
-- inputs:
-
-https://www.pexels.com/photo/action-adventure-alps-conifers-238622/
-https://www.pexels.com/photo/alone-animal-bird-clouds-395196/
-https://www.pexels.com/photo/woman-in-gray-long-sleeve-top-and-red-pants-sitting-beside-tree-and-white-medium-coated-dog-681833/
 
 - outputs:
 
 ![output1](/examples/output1.jpg)
 ![output2](/examples/output2.jpg)
 ![output3](/examples/output3.jpg)
+
+- inputs:
+
+https://www.pexels.com/photo/action-adventure-alps-conifers-238622/
+https://www.pexels.com/photo/alone-animal-bird-clouds-395196/
+https://www.pexels.com/photo/woman-in-gray-long-sleeve-top-and-red-pants-sitting-beside-tree-and-white-medium-coated-dog-681833/
 
 # install
 
