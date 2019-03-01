@@ -43,12 +43,14 @@ def batch_create(input_path="input",
             fn_log = " (" + filename + ")"
             filenames_with_log.set_description("generating depth map..." +
                                                fn_log)
-            depthmap = generate_depth_map(i_path)
-            #print("depthmap: ")
-            #print(depthmap)
-            filenames_with_log.set_description("saving depthmap...")
-            normalized = normalize_depth_contrast(depthmap)
-            normalized.save(d_path)
+
+            if create_depth_flag:
+                depthmap = generate_depth_map(i_path)
+                #print("depthmap: ")
+                #print(depthmap)
+                filenames_with_log.set_description("saving depthmap...")
+                normalized = normalize_depth_contrast(depthmap)
+                normalized.save(d_path)
 
             c = 0
             for i in np.linspace(min_deviation, max_deviation, step):

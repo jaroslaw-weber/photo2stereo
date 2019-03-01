@@ -1,4 +1,1 @@
-*.save
-*.pyc
-/input
-/output
+*.DS_Store

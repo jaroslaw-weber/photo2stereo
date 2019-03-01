@@ -33,7 +33,24 @@ then run
 
 ```
 docker run -it -v ${PWD}/input:/workspace/input -v ${PWD}/output:/workspace/output jaroslawweber/photo2stereo:base
-python generate_stereo.py
+```
+
+for fully automated stereo generation, run:
+
+```
+python generate_stereo_auto.py
+```
+
+for semi-automated stereo generation, generate depth maps first:
+
+```
+python generate_depths.py
+```
+
+and after you fix the depth map (usually few fixes is enough), you can create a stereo with it:
+
+```
+python stereo_from_depth.py
 ```
 
 # depth maps
@@ -41,7 +58,6 @@ python generate_stereo.py
 to also output depth maps run this command instead
 ```
 docker run -it -v ${PWD}/input:/workspace/input -v ${PWD}/output:/workspace/output -v ${PWD}/depths:/workspace/depths jaroslawweber/photo2stereo:base
-python generate_stereo.py
 ```
 
 # customize
